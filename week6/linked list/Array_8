@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool chsum(int a[],int n,int x)
+{ int i,j;
+  for(i=0;i<n-1;i++)
+  {
+    for(j=i+1;j<n;j++)
+     {
+        if(a[i]+a[j]==x){
+            cout<<"numbers with sum"<<x<< "is ("<< a[i]<<","<<a[j]<<")"<<endl;
+            return 1;
+        }
+     }
+  }
+  return 0;
+}
+
+int main()
+{
+    int n,a[n],i,x;
+    cout<<"enter the size :";
+    cin>>n;
+    cout<<"enter numbers :";
+    for(i=0;i<n;i++){
+        cin>>a[i];
+    }
+    cout<<"enter the number :";
+    cin>>x;
+    if(chsum(a,n,x)){
+        cout<<"the sum is exist";
+    }
+    else{cout<<"sum doesn't exist";}
+    return 0;
+}
